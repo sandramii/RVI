@@ -11,6 +11,10 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] Weapon weapon;
 
+    public int maxHealth = 20;
+    public int currentHealth;
+    public HealthBar healthBar;
+
     private float horizontal;
     private float vertical;
 
@@ -32,6 +36,9 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         Debug.Log("Start");
+
+        currentHealth = maxHealth;
+        healthBar.SetMaxHealth(maxHealth);
     }
 
     private void Update()
